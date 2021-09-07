@@ -61,7 +61,7 @@ class StudentDaoJPAImplTest {
         // Act
         // Assert
         //Will throw otherException
-        assertThrows(Exception.class,
+        assertThrows(IllegalArgumentException.class,
                 ()-> studentDao.persist(student)
                 );
 

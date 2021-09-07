@@ -19,7 +19,7 @@ public class StudentDaoJPAImpl implements StudentDao {
 
     @Override
     @Transactional(rollbackFor = {IllegalArgumentException.class, InvalidNameException.class})
-    public Student persist(Student student) {
+    public Student persist(Student student) throws IllegalArgumentException, InvalidNameException{
         if (student == null) throw new IllegalArgumentException("Student is not allowed to be null");
 
         if (student.getFirstName().length() <3 ) throw new InvalidNameException("Student is not allowed to have a name less than 3 Characters");
